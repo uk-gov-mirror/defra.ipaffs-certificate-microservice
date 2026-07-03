@@ -3,6 +3,13 @@ service: certificate-service
 container:
   replicas: 1
 
+readinessProbe:
+  httpGet:
+    path: /admin/health-check
+    port: 8000
+  initialDelaySeconds: 10
+  periodSeconds: 5
+
 config:
   JDK_JAVA_OPTIONS: "-XX:MaxRAMPercentage=60.0"
 
@@ -17,4 +24,5 @@ resources:
 database:
   enabled: false
   migrations:
+
     enabled: false
