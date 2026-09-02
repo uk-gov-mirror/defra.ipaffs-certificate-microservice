@@ -50,3 +50,5 @@ stages:
       serviceName: "${{ variables.serviceName }}"
       dockerFile: "${{ variables.dockerFile }}"
       migrations: false
+      sonarAnalysis: true
+      sonarReferenceBranch: master
